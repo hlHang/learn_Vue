@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue事件操作</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--vue绑定事件-->
+    <button v-on:click="search()">查询1</button>
+    <p>你要查询的是:{{searchMap.keyWord}}}</p>
+    <p><a v-bind:href="result.size" target="_blank">{{result.title}}</a></p>
+    <button @click="f1">查询2</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            searchMap: {
+                keyWord: "何柠航"
+            },
+            // 查询结果
+            result: {},
+        },
+        methods: { //定义多个方法
+            search() {
+                console.log('search...')
+                this.result = {
+                    "title": "何柠航",
+                    "size": "http://www.baidu.com"
+                }
+            },
+            f1() {
+                console.log('f1')
+            }
+        }
+
+    })
+</script>
+</html>
