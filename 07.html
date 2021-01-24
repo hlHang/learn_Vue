@@ -2,24 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>vue指令</title>
+    <title>vue指令v-for</title>
     <script src="js/vue.min.js"></script>
 </head>
 <body>
 <div id="app">
-    <label>
-        <input type="checkbox" v-model="ok"/> 是否同意
-        <h1 v-if="ok">何柠航</h1>
-        <h1 v-else>学习</h1>
-    </label>
+    <ul>
+        <li v-for="n in 10">{{n}}</li>
+    </ul>
+
+    <ol>
+        <li v-for="(n,index) in 10">{{n}} -- {{index}}</li>
+    </ol>
+
+    <hr/>
+
+    <table>
+        <tr v-for="user in userList">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </table>
 </div>
 </body>
 <script>
     new Vue({
         el: '#app',
         data: {
-            ok:false
+            userList: [
+                {id: 1, username: 'helen', age: 18},
+                {id: 2, username: 'peter', age: 18},
+                {id: 3, username: 'andy', age: 18}
+            ]
         }
+
     })
 </script>
 </html>
