@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue指令</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <label>
+        <input type="checkbox" v-model="ok"/> 是否同意
+        <h1 v-if="ok">何柠航</h1>
+        <h1 v-else>学习</h1>
+    </label>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            ok:false
+        }
+    })
+</script>
+</html>
