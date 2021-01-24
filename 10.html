@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue生命周期</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    hello
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+
+        },
+        created() {
+            debugger
+            // 在页面渲染完成之前执行
+            console.log('created...')
+        },
+        mounted() {
+            debugger
+            // 在页面渲染完成之后执行
+            console.log('mounted...')
+        }
+    })
+</script>
+</html>
